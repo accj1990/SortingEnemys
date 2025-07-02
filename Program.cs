@@ -18,15 +18,26 @@ class Program
 
         for (int i = 0; i < Enemies.Length; i++)
             Console.WriteLine(Enemies[i].GetName());
-        
+
         Enemy[] Ordenado;
-        //Ordenado = BubbleSort.Sorting(Enemies);
-        //Ordenado = InsertionSort.Sorting(Enemies);
+
+        Ordenado = BubbleSort.Sorting(Enemies);
+        Console.WriteLine("BubbleSort");
+        ExibirEnemys(Ordenado);
+
+        Ordenado = InsertionSort.Sorting(Enemies);
+        Console.WriteLine("InsertionSort");
+        ExibirEnemys(Ordenado);
+
+        Console.WriteLine("SelectionSort");
         Ordenado = SelectionSort.Sorting(Enemies);
+        ExibirEnemys(Ordenado);
 
-        for (int i = 0; i < Ordenado.Length; i++)
-            Console.WriteLine("" +Ordenado[i].GetName() + " "+ Ordenado[i].GetLevel());
+    }
 
-
+    public static void ExibirEnemys(Enemy[] Enemies)
+    {
+        for (int i = 0; i < Enemies.Length; i++)
+            Console.WriteLine("" + Enemies[i].GetName() + " " + Enemies[i].GetLevel());
     }
 }
