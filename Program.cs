@@ -1,10 +1,7 @@
 ﻿using Sorting.reader;
-using Sorting.sorting.simple;
+using Sorting.sorting.efficient;
 using SortingEnemys.enemys;
-
 namespace SortingEnemys;
-
-
 class Program
 {
     public static void Main(string[] args)
@@ -21,16 +18,23 @@ class Program
 
         Enemy[] Ordenado;
 
-        Ordenado = BubbleSort.Sorting(Enemies);
-        Console.WriteLine("BubbleSort");
-        ExibirEnemys(Ordenado);
+        /* Ordenado = BubbleSort.Sorting(Enemies);
+         Console.WriteLine("BubbleSort");
+         ExibirEnemys(Ordenado);
+        */
 
-        Ordenado = InsertionSort.Sorting(Enemies);
+        /*Ordenado = InsertionSort.Sorting(Enemies);
         Console.WriteLine("InsertionSort");
         ExibirEnemys(Ordenado);
+        */
 
-        Console.WriteLine("SelectionSort");
+        /*Console.WriteLine("SelectionSort");
         Ordenado = SelectionSort.Sorting(Enemies);
+        ExibirEnemys(Ordenado);
+        */
+
+        Console.WriteLine("QuickSort");
+        Ordenado = QuickSort.Sorting(Enemies);
         ExibirEnemys(Ordenado);
 
     }
