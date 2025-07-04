@@ -54,7 +54,7 @@ namespace PesquisaEmMemoria.estruturas
 
         public void Mostrar()
         {
-            Console.WriteLine("Raiz" + this.raiz.Valor);
+            Console.WriteLine(" Raiz " + this.raiz.Valor.GetName() + " " + this.raiz.Valor.GetAttack());
             Mostrar(this.raiz);
         }
 
@@ -63,7 +63,7 @@ namespace PesquisaEmMemoria.estruturas
             if (proximo != null)
             {
                 Mostrar(proximo.Esq);
-                Console.WriteLine(proximo.Valor);
+                Console.WriteLine(proximo.Valor.GetName() + " " + proximo.Valor.GetAttack());
                 Mostrar(proximo.Dir);
             }
         }

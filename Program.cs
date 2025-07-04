@@ -1,4 +1,5 @@
-﻿using Sorting.reader;
+﻿using ExemploHash;
+using Sorting.reader;
 using Sorting.sorting.efficient;
 using SortingEnemys.enemys;
 namespace SortingEnemys;
@@ -36,6 +37,23 @@ class Program
         Console.WriteLine("QuickSort");
         Ordenado = QuickSort.Sorting(Enemies);
         ExibirEnemys(Ordenado);
+
+
+        HashTree hashTree = new HashTree(5);
+
+        hashTree.Adicionar(Enemies[3].GetName(), Enemies[3]);
+        hashTree.Adicionar(Enemies[3].GetName(), Enemies[2]);
+        hashTree.Adicionar(Enemies[3].GetName(), Enemies[0]);
+
+
+
+        hashTree.Adicionar(Enemies[1].GetName(), Enemies[1]);
+        Enemy e2 = Enemies[1];
+        e2.SetAttack(5000);
+
+
+        hashTree.Mostrar();
+
 
     }
 

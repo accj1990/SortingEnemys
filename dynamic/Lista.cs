@@ -1,4 +1,5 @@
-﻿using AlocacaoDinamica.classes;
+﻿using SortingEnemys.dynamic;
+using SortingEnemys.enemys;
 
 namespace AlocacaoDinamica
 {
@@ -13,7 +14,7 @@ namespace AlocacaoDinamica
             //this.primeiro = this.ultimo = new Celula(-1);
         }
 
-        public void InserirInicio(int valor)
+        public void InserirInicio(Enemy valor)
         {
             if (primeiro == ultimo)
             {
@@ -37,7 +38,7 @@ namespace AlocacaoDinamica
             }
         }
 
-        public void InserirFim(int valor)
+        public void InserirFim(Enemy valor)
         {
             if (primeiro == ultimo)
             {
@@ -50,7 +51,7 @@ namespace AlocacaoDinamica
                 ultimo = ultimo.prox;
             }
         }
-        public void InserirPosicao(int valor, int pos)
+        public void InserirPosicao(Enemy valor, int pos)
         {
             int cont = 0;
             Celula i;
@@ -70,22 +71,22 @@ namespace AlocacaoDinamica
             }
         }
 
-        public int? RemoverInicio()
+        public Enemy RemoverInicio()
         {
-            int valor = -1;
+            Enemy valor = null;
             if (primeiro == ultimo & primeiro == null)
             {
                 Console.WriteLine("Não é possível remover, pois a lista está vazia.");
             }
             else if (primeiro == ultimo)
             {
-                valor = (int)primeiro!.valor!;
+                valor = primeiro!.valor!;
                 primeiro = ultimo = null;
 
             }
             else
             {
-                valor = (int)primeiro!.valor!;
+                valor = primeiro!.valor!;
                 Celula tmp = primeiro!.prox!;
                 primeiro.prox = null;
                 primeiro = tmp;
@@ -93,16 +94,16 @@ namespace AlocacaoDinamica
 
             return valor;
         }
-        public int RemoverFim()
+        public Enemy RemoverFim()
         {
-            int cont = -1;
+            Enemy valor = null;
             if (ultimo == null)
             {
                 Console.WriteLine("Lista vazia não posso remover.");
             }
             else
             {
-                cont = (int)ultimo!.valor!;
+                valor = ultimo!.valor!;
                 Celula i;
                 for (i = primeiro!; i != null && i.prox != ultimo; i = i.prox!) ;
 
@@ -110,7 +111,7 @@ namespace AlocacaoDinamica
                 i.prox = null;
             }
 
-            return cont;
+            return valor;
         }
 
         public void RemoverPosicao(int pos)

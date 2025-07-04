@@ -1,4 +1,5 @@
-﻿using AlocacaoDinamica.classes;
+﻿using SortingEnemys.dynamic;
+using SortingEnemys.enemys;
 
 namespace AlocacaoDinamica
 {
@@ -11,7 +12,7 @@ namespace AlocacaoDinamica
             this.topo = null;
         }
         // Inserir na pilha
-        public bool Inserir(int valor)
+        public bool Inserir(Enemy valor)
         {
             if (topo == null)
             {
@@ -28,16 +29,16 @@ namespace AlocacaoDinamica
         }
 
         // Remover na pilha
-        public int? Remover()
+        public Enemy? Remover()
         {
             if (topo == null)
             {
                 Console.WriteLine("Pilha vazia");
-                return -1;
+                return null;
             }
             else
             {
-                int? valor = topo.valor;
+                Enemy valor = topo.valor;
                 Celula tmp = topo.prox;
                 topo = topo.prox;
                 tmp = null;

@@ -17,8 +17,8 @@ namespace Sorting.sorting.efficient
             Array.Copy(enemys, 0, esquerda, 0, meio);
             Array.Copy(enemys, meio, direita, 0, enemys.Length - meio);
 
-            esquerda = Sort(esquerda);
-            direita = Sort(direita);
+            //esquerda = Sort(esquerda);
+            //direita = Sort(direita);
 
             return Merge(esquerda, direita);
         }
