@@ -1,4 +1,6 @@
-﻿namespace PesquisaEmMemoria.estruturas
+﻿using SortingEnemys.enemys;
+
+namespace PesquisaEmMemoria.estruturas
 {
     public class ArvoreBinaria
     {
@@ -8,7 +10,7 @@
             this.raiz = null!;
         }
 
-        public void Inserir(int Valor)
+        public void Inserir(Enemy Valor)
         {
             if (this.raiz == null)
             {
@@ -21,7 +23,7 @@
 
         }
 
-        public void Inserir(int Valor, No proximo)
+        public void Inserir(Enemy Valor, No proximo)
         {
             if (proximo.Dir != null)
             {
@@ -34,15 +36,20 @@
             }
             else
             {
-                if (Valor > proximo.Valor)
+                if (Valor.GetAttack() > proximo.Valor.GetAttack())
                 {
                     proximo.Dir = new No(Valor);
                 }
-                else if (Valor <= proximo.Valor)
+                else if (Valor.GetAttack() <= proximo.Valor.GetAttack())
                 {
                     proximo.Esq = new No(Valor);
                 }
             }
+        }
+
+        public void Remover(Enemy valor)
+        {
+
         }
 
         public void Mostrar()

@@ -1,6 +1,6 @@
 ﻿namespace SortingEnemys.enemys
 {
-    class Enemy
+    public class Enemy
     {
         private string Name;
         private int Level;
